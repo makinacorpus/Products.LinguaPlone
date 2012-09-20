@@ -175,8 +175,8 @@
                                             <metal:fieldMacro use-macro="python:other.widget(otherfield.getName(), mode='view')"/>
                                         </div>
                                     </div>
-                                </td>
-                                <td class="targetLanguage" style="width: 50%"
+                                 <div class="visualClear">&nbsp;</div>
+                                 <div class="targetLanguage" 
                                     tal:define="read_only python:field.isLanguageIndependent(context)">
                                     <tal:block condition="python:not read_only">
                                       <metal:fieldMacro use-macro="python:here.widget(fieldname, mode='edit')" />
@@ -185,7 +185,23 @@
                                       <metal:fieldMacro use-macro="python:here.widget(fieldname)" />
                                     </tal:block>
 
+                                </div>
+                               <style type="text/css">
+                                 .template-translate_item #content .targetLanguage label.formQuestion{
+                                   display:None;
+                                 }
+                                 .template-translate_item #content .targetLanguage img {
+                                   display:block;
+                                 }
+                                 .template-translate_item #content .targetLanguage .field {
+                                   margin-top:   15px;
+                                 }
+                                 .template-translate_item #content .targetLanguage{
+                                   margin-bottom:15px;
+                                 }
+                               </style>
                                 </td>
+
                             </tal:block>
                         </tr>
                     </table>
